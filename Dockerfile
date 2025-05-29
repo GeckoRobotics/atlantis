@@ -7,15 +7,15 @@ USER root
 ARG CLOUD_SDK_VERSION=503.0.0
 
 RUN apk --no-cache upgrade && apk --no-cache add \
-    curl \
-    python3 \
-    py3-crcmod \
-    py3-openssl \
-    bash \
-    libc6-compat \
-    openssh-client \
-    git \
-    gnupg \
+  curl \
+  python3 \
+  py3-crcmod \
+  py3-openssl \
+  bash \
+  libc6-compat \
+  openssh-client \
+  git \
+  gnupg \
   && curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz \
   && tar xzf google-cloud-cli-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz \
   && rm google-cloud-cli-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz \
@@ -30,7 +30,7 @@ RUN curl -LO https://github.com/transcend-io/terragrunt-atlantis-config/releases
   && mv terragrunt-atlantis-config_${TERRAGRUNT_ATLANTIS_CONFIG_VERSION}_linux_amd64 terragrunt-atlantis-config \
   && install terragrunt-atlantis-config /usr/local/bin
 
-ARG TG_VERSION=v0.70.4
+ARG TG_VERSION=v0.80.4
 
 RUN curl -sS -L \
   "https://github.com/gruntwork-io/terragrunt/releases/download/${TG_VERSION}/terragrunt_linux_amd64" \
